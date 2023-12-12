@@ -23,7 +23,7 @@
         <div id="buttontopPicture2"></div>
       </div>
       <div id="picture">
-        <img src="" alt="image du pokemon" height="170" />
+        <img [src]="pokemon.sprites.front_default " alt=" {{ pokemon.name }} " height="170" />
       </div>
       <div id="buttonbottomPicture"></div>
       <div id="speakers">
@@ -37,15 +37,25 @@
     <div id="barbutton1"></div>
     <div id="barbutton2"></div>
     <div id="cross">
-      <div id="leftcross">
-        <div id="leftT"></div>
-      </div>
+      <!--  <div id="leftcross">-->
+      <!--    <div id="leftT" (click)="clickLess()"></div>-->
+      <!--  </div>-->
+      <a [routerLink]="['/pokedex', pokemon.id - 1]">
+        <div id="leftcross" >
+          <div id="leftT" *ngIf="pokemon.id >1"></div>
+        </div>
+      </a>
       <div id="topcross">
         <div id="upT"></div>
       </div>
-      <div id="rightcross">
-        <div id="rightT"></div>
-      </div>
+      <!--  <div id="rightcross"> -->
+      <!--    <div id="rightT" (click)="clickMore()"></div> -->
+      <!--  </div> -->
+      <a [routerLink]="['/pokedex', pokemon.id + 1]">
+        <div id="rightcross">
+          <div id="rightT"></div>
+        </div>
+      </a>
       <div id="midcross">
         <div id="midCircle"></div>
       </div>
@@ -56,20 +66,29 @@
   </div>
   <div id="right">
     <div id="stats">
-      <strong> Nom du pokemon </strong><br/>
+      <strong> {{ pokemon.name }}  </strong><br/>
       <br>
-      <strong>Type:</strong> type pokemon eau,feu,.."<br/>
-      <strong>Height:</strong> taille du pokemon <br/>
-      <strong>Weight:</strong> poids du pokemon <br/><br/>
+      <strong>Type:</strong> {{ pokemon.types["0"].type.name }} <br/>
+      <strong>Height:</strong> {{ pokemon.height }} <br/>
+      <strong>Weight:</strong> {{ pokemon.weight }} <br/><br/>
+    </div>
 
+    <div id="theButtons1">
+      <a href="/pokemon/blue" (click)="openModal()">
+        <div class="blueButton" ></div>
+      </a>
+      <a href="/pokemon/green" (click)="openModal()">
+        <div class="greenButton"></div>
+      </a>
+      <a href="/pokemon/yellow" (click)="openModal()">
+        <div class="yellowButton"></div>
+      </a>
+      <a href="/pokemon/red" (click)="openModal()">
+        <div class="redButton"></div>
+      </a>
+      <div class="blueButton"></div>
     </div>
-    <div id="blueButtons1">
-      <div class="blueButton"></div>
-      <div class="blueButton"></div>
-      <div class="blueButton"></div>
-      <div class="blueButton"></div>
-      <div class="blueButton"></div>
-    </div>
+
     <div id="blueButtons2">
       <div class="blueButton"></div>
       <div class="blueButton"></div>
@@ -77,6 +96,7 @@
       <div class="blueButton"></div>
       <div class="blueButton"></div>
     </div>
+
     <div id="miniButtonGlass4"></div>
     <div id="miniButtonGlass5"></div>
     <div id="barbutton3"></div>

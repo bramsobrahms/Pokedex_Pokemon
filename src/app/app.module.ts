@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { HeaderComponent } from './layout/header/header.component';
 import {FooterComponent} from "./layout/footer/footer.component";
-import { PokedexComponent } from './core/components/pokedex/pokedex.component';
-import { DetailPokemonComponent } from './features/pokedex/detail-pokemon/detail-pokemon.component';
 import { HttpClientModule} from "@angular/common/http";
 import { ModalPokeComponent } from './features/pokedex/modal-poke/modal-poke.component';
+import { HomeComponent } from './core/components/home/home.component';
+import { PokedexComponent } from './features/pokedex/pokedex/pokedex.component';
+import { ModalPokeRedComponent } from './features/pokedex/modal-poke-red/modal-poke-red.component';
+import { ModalPokeYellowComponent } from './features/pokedex/modal-poke-yellow/modal-poke-yellow.component';
+import { ModalPokeGreenComponent } from './features/pokedex/modal-poke-green/modal-poke-green.component';
+
 
 @NgModule({
   declarations: [
@@ -17,9 +21,12 @@ import { ModalPokeComponent } from './features/pokedex/modal-poke/modal-poke.com
     NavBarComponent,
     HeaderComponent,
     FooterComponent,
-    PokedexComponent,
-    DetailPokemonComponent,
     ModalPokeComponent,
+    HomeComponent,
+    PokedexComponent,
+    ModalPokeRedComponent,
+    ModalPokeYellowComponent,
+    ModalPokeGreenComponent,
   ],
   imports: [
     BrowserModule,

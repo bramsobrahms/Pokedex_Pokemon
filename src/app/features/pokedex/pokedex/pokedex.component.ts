@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import {PokemonModel} from "../../models/pokemon-model";
 import {PokemonService} from "../../services/pokemon.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-detail-pokemon',
-  templateUrl: './detail-pokemon.component.html',
-  styleUrls: ['./detail-pokemon.component.scss']
+  selector: 'app-pokedex',
+  templateUrl: './pokedex.component.html',
+  styleUrls: ['./pokedex.component.scss']
 })
-export class DetailPokemonComponent implements OnInit{
+export class PokedexComponent {
 
   pokemon!: PokemonModel;
 
@@ -29,14 +29,14 @@ export class DetailPokemonComponent implements OnInit{
     // })
 
     this._ar.params.subscribe({
-      next: (params:any) => {
-        this._pokemonServ.getOne(params.id).subscribe({
+        next: (params:any) => {
+          this._pokemonServ.getOne(params.id).subscribe({
             next: (data: PokemonModel) => {
               this.pokemon = data;
               console.log( data)
             }
-        })
-      }
+          })
+        }
       }
     )
 

@@ -1,14 +1,15 @@
 import {Component, OnInit} from '@angular/core';
+import {PokemonTypeColorModel} from "../../models/pokemon-type-color-model";
 import {PokemonService} from "../../services/pokemon.service";
 import {ActivatedRoute} from "@angular/router";
-import {PokemonTypeColorModel} from "../../models/pokemon-type-color-model";
+
 
 @Component({
-  selector: 'app-modal-poke',
-  templateUrl: './modal-poke.component.html',
-  styleUrls: ['./modal-poke.component.scss']
+  selector: 'app-modal-poke-red',
+  templateUrl: './modal-poke-red.component.html',
+  styleUrls: ['./modal-poke-red.component.scss']
 })
-export class ModalPokeComponent implements OnInit{
+export class ModalPokeRedComponent implements OnInit{
 
   pokemonColor: PokemonTypeColorModel | null = null;
 
@@ -18,11 +19,10 @@ export class ModalPokeComponent implements OnInit{
   ) {
   }
 
-  //TODO AFFICHE LES POKEMON BLEU
   ngOnInit(): void {
     this._ar.params.subscribe({
       next: (params:any) => {
-        this._pokemonServ.getAllBlue().subscribe(
+        this._pokemonServ.getAllRed().subscribe(
           (data: PokemonTypeColorModel) => {
             this.pokemonColor = data;
           }
@@ -32,5 +32,3 @@ export class ModalPokeComponent implements OnInit{
   }
 
 }
-
-
