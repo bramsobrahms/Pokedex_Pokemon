@@ -13,7 +13,7 @@ export class DetailPokemonComponent implements OnInit{
   pokemon!: PokemonModel;
 
   constructor(
-    private readonly _pokeonServ: PokemonService,
+    private readonly _pokemonServ: PokemonService,
     private readonly _ar: ActivatedRoute,
     private readonly _router: Router,
   ) {
@@ -30,7 +30,7 @@ export class DetailPokemonComponent implements OnInit{
 
     this._ar.params.subscribe({
       next: (params:any) => {
-        this._pokeonServ.getOne(params.id).subscribe({
+        this._pokemonServ.getOne(params.id).subscribe({
             next: (data: PokemonModel) => {
               this.pokemon = data;
               console.log( data)
@@ -40,6 +40,16 @@ export class DetailPokemonComponent implements OnInit{
       }
     )
 
+  }
+
+  isModalOpen: boolean = false;
+
+  openModal(): void {
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
   }
   //
   // clickMore(): void {

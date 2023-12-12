@@ -9,6 +9,7 @@ import {FooterComponent} from "./layout/footer/footer.component";
 import { PokedexComponent } from './core/components/pokedex/pokedex.component';
 import { DetailPokemonComponent } from './features/pokedex/detail-pokemon/detail-pokemon.component';
 import { HttpClientModule} from "@angular/common/http";
+import { ModalPokeComponent } from './features/pokedex/modal-poke/modal-poke.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule} from "@angular/common/http";
     FooterComponent,
     PokedexComponent,
     DetailPokemonComponent,
+    ModalPokeComponent,
   ],
   imports: [
     BrowserModule,
