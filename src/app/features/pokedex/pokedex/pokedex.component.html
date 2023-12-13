@@ -23,7 +23,8 @@
         <div id="buttontopPicture2"></div>
       </div>
       <div id="picture">
-        <img [src]="pokemon.sprites.front_default " alt=" {{ pokemon.name }} " height="170" />
+        <img *ngIf="showImage" [src]="pokemon.sprites.front_default " alt=" {{ pokemon.name }} " height="170" />
+        <img *ngIf="!showImage"  [src]="pokemon.sprites.back_default " alt=" {{ pokemon.name }} " height="170" />
       </div>
       <div id="buttonbottomPicture"></div>
       <div id="speakers">
@@ -45,7 +46,7 @@
           <div id="leftT" *ngIf="pokemon.id >1"></div>
         </div>
       </a>
-      <div id="topcross">
+      <div id="topcross" (click)="changeImage(true)">
         <div id="upT"></div>
       </div>
       <!--  <div id="rightcross"> -->
@@ -59,7 +60,7 @@
       <div id="midcross">
         <div id="midCircle"></div>
       </div>
-      <div id="botcross">
+      <div id="botcross" (click)="changeImage(false)">
         <div id="downT"></div>
       </div>
     </div>

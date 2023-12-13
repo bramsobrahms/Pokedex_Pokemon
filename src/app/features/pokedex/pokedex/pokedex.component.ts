@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class PokedexComponent {
 
   pokemon!: PokemonModel;
+  showImage: boolean = true;
 
   constructor(
     private readonly _pokemonServ: PokemonService,
@@ -41,6 +42,12 @@ export class PokedexComponent {
     )
 
   }
+
+  changeImage(isTopCorss: boolean) {
+    this.showImage = isTopCorss;
+  }
+
+
 
   isModalOpen: boolean = false;
 
