@@ -1,4 +1,5 @@
 export interface PokemonTypeColorModel {
+
   id: number;
   name: string;
   color: {
@@ -13,18 +14,23 @@ export interface PokemonTypeColorModel {
     back_default: string;
   };
   pokemon_species: PokemonSpecies[];
+
 }
 
 export interface PokemonSpecies {
+
   name: string;
   url: string;
   varieties: PokemonVariety[];
+
 }
 
 export interface PokemonVariety {
+
   is_default: boolean;
   pokemon: {
     name: string;
     url: string;
   };
+
 }

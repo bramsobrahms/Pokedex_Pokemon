@@ -68,18 +68,6 @@ export class PokedexComponent {
   }
 
 
-
-
-
-  isModalOpen: boolean = false;
-
-  openModal(): void {
-    this.isModalOpen = true;
-  }
-
-  closeModal(): void {
-    this.isModalOpen = false;
-  }
   //
   // clickMore(): void {
   //   let pokemonId = this._ar.snapshot.params['id'];
@@ -116,6 +104,5 @@ export class PokedexComponent {
   //   this._router.navigate(['pokemon/'+pokemonId])
   //
   // }
-
 
 }
