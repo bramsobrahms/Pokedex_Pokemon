@@ -693,14 +693,6 @@
     left: 49px;
   }
 
-  div#blueButtons2 {
-    z-index: 1;
-
-    position: absolute;
-    top: 335px;
-    left: 49px;
-  }
-
   div.blueButton {
     height: 35px;
     width: 45px;
@@ -791,6 +783,29 @@
     -o-box-shadow: -1px 2px #FF0000;
   }
 
+  div.pinkButton {
+    height: 35px;
+    width: 45px;
+    background-color: #FFB6C1;
+    float: left;
+    margin-right: 7px;
+
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    background: linear-gradient(to top, #DB7093 0%, #FF1493 80%);
+    background: -webkit-linear-gradient(to top, #DB7093 0%, #FF1493 80%);
+    background: -moz-linear-gradient(to top, #DB7093 0%, #FF1493 80%);
+    background: -o-linear-gradient(to top, #DB7093 0%, #FF1493 80%);
+
+    box-shadow: -1px 2px #FF69B4;
+    -webkit-box-shadow: -1px 2px #FF69B4;
+    -moz-box-shadow: -1px 2px #FF69B4;
+    -o-box-shadow: -1px 2px #FF69B4;
+  }
+
 
   div#barbutton3 {
     height: 13px;
@@ -841,6 +856,130 @@
     -moz-box-shadow: -1px 2px #7b0000;
     -o-box-shadow: -1px 2px #7b0000;
   }
+
+  div#blueButtons2 {
+    z-index: 1;
+
+    position: absolute;
+    top: 335px;
+    left: 49px;
+  }
+
+  div.brownButton {
+    height: 35px;
+    width: 45px;
+    background-color: #8B4513;
+    float: left;
+    margin-right: 7px;
+
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    background: linear-gradient(to top, #A0522D 0%, #800000 80%);
+    background: -webkit-linear-gradient(to top, #A0522D 0%, #800000 80%);
+    background: -moz-linear-gradient(to top, #A0522D 0%, #800000 80%);
+    background: -o-linear-gradient(to top, #A0522D 0%, #800000 80%);
+
+    box-shadow: -1px 2px #800000;
+    -webkit-box-shadow: -1px 2px #800000;
+    -moz-box-shadow: -1px 2px #800000;
+    -o-box-shadow: -1px 2px #800000;
+  }
+
+  div.whiteButton {
+    height: 35px;
+    width: 45px;
+    background-color: #FFFFFF;
+    float: left;
+    margin-right: 7px;
+
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    background: linear-gradient(to top, #FFFFFF 0%, #FFF8DC 80%);
+    background: -webkit-linear-gradient(to top, #FFFFFF 0%, #FFF8DC 80%);
+    background: -moz-linear-gradient(to top, #FFFFFF 0%, #FFF8DC 80%);
+    background: -o-linear-gradient(to top, #FFFFFF 0%, #FFF8DC 80%);
+
+    box-shadow: -1px 2px #FFFFFF;
+    -webkit-box-shadow: -1px 2px #FFFFFF;
+    -moz-box-shadow: -1px 2px #FFFFFF;
+    -o-box-shadow: -1px 2px #FFFFFF;
+  }
+
+  div.grayButton {
+    height: 35px;
+    width: 45px;
+    background-color: #C0C0C0;
+    float: left;
+    margin-right: 7px;
+
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    background: linear-gradient(to top, #C0C0C0 0%, #808080 80%);
+    background: -webkit-linear-gradient(to top, #C0C0C0 0%, #808080 80%);
+    background: -moz-linear-gradient(to top, #C0C0C0 0%, #808080 80%);
+    background: -o-linear-gradient(to top, #C0C0C0 0%, #808080 80%);
+
+    box-shadow: -1px 2px #696969;
+    -webkit-box-shadow: -1px 2px #696969;
+    -moz-box-shadow: -1px 2px #696969;
+    -o-box-shadow: -1px 2px #696969;
+  }
+
+  div.purpleButton {
+    height: 35px;
+    width: 45px;
+    background-color: #9370DB;
+    float: left;
+    margin-right: 7px;
+
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    background: linear-gradient(to top, #9370DB 0%, #8A2BE2 80%);
+    background: -webkit-linear-gradient(to top, #9370DB 0%, #8A2BE2 80%);
+    background: -moz-linear-gradient(to top, #9370DB 0%, #8A2BE2 80%);
+    background: -o-linear-gradient(to top, #9370DB 0%, #8A2BE2 80%);
+
+    box-shadow: -1px 2px #8A2BE2;
+    -webkit-box-shadow: -1px 2px #8A2BE2;
+    -moz-box-shadow: -1px 2px #8A2BE2;
+    -o-box-shadow: -1px 2px #8A2BE2;
+  }
+
+  div.blackButton {
+    height: 35px;
+    width: 45px;
+    background-color: #000000;
+    float: left;
+    margin-right: 7px;
+
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    background: linear-gradient(to top, #1a1919 0%, #000000 80%);
+    background: -webkit-linear-gradient(to top, #1a1919 0%, #000000 80%);
+    background: -moz-linear-gradient(to top, #1a1919 0%, #000000 80%);
+    background: -o-linear-gradient(to top, #1a1919 0%, #000000 80%);
+
+    box-shadow: -1px 2px #000000;
+    -webkit-box-shadow: -1px 2px #000000;
+    -moz-box-shadow: -1px 2px #000000;
+    -o-box-shadow: -1px 2px #000000;
+  }
+
 
   div#miniButtonGlass4 {
     width: 15px;
