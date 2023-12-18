@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'pokedex/:id', component: PokedexComponent },
   { path: 'pokemon/color/:color', component: PokemonColorComponent },
-  { path: 'pokemon/type/:type', component: PokemonTypeComponent },
+  { path: 'pokemon/type', component: PokemonTypeComponent },
 ];
 
 @NgModule({
