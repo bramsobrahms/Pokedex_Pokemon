@@ -10,6 +10,7 @@ import { HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './core/components/home/home.component';
 import { PokedexComponent } from './features/pokedex/pokedex/pokedex.component';
 import { PokemonColorComponent } from './features/pokemon-color/pokemon-color.component';
+import { PokemonTypeComponent } from './features/pokemon-type/pokemon-type.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { PokemonColorComponent } from './features/pokemon-color/pokemon-color.co
     HomeComponent,
     PokedexComponent,
     PokemonColorComponent,
+    PokemonTypeComponent,
   ],
   imports: [
     BrowserModule,
