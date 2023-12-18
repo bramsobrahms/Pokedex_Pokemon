@@ -75,16 +75,17 @@
     </div>
 
     <div id="theButtons1">
-      <a href="/pokemon/blue" (click)="openModal()">
+      <a [routerLink]="['/pokemon/', { color: 'blue' }]" (click)="updateColor('blue')" >
         <div class="blueButton" ></div>
       </a>
-      <a href="/pokemon/green" (click)="openModal()">
+      <a [routerLink]="['/pokemon/', { color: 'green' }]" (click)="updateColor('green')">
         <div class="greenButton"></div>
       </a>
-      <a href="/pokemon/yellow" (click)="openModal()">
+
+      <a [routerLink]="['/pokemon/', { color: 'yellow' }]" (click)="updateColor('yellow')">
         <div class="yellowButton"></div>
       </a>
-      <a href="/pokemon/red" (click)="openModal()">
+      <a [routerLink]="['/pokemon/', { color: 'red' }]" (click)="updateColor('red')" >
         <div class="redButton"></div>
       </a>
       <div class="blueButton"></div>

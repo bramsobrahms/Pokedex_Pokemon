@@ -1,9 +1,9 @@
-:host{
+:host {
   height: 100%;
   display: flex;
   flex-direction: column;
 
-  header{
+  header {
     height: 10%;
     text-align: center;
     display: flex;
@@ -11,20 +11,23 @@
     justify-content: center;
     background-color: #c00d0d;
   }
-  nav{
+
+  nav {
     height: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #084035;
   }
-  main{
+
+  main {
     min-height: 80%;
     background-color: #e8e8e7;
     overflow-y: scroll;
     padding: 15px;
   }
-  footer{
+
+  footer {
     height: 5%;
     text-align: center;
     display: flex;

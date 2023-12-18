@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {PokemonModel} from "../../models/pokemon-model";
 import {PokemonService} from "../../services/pokemon.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {PokemonTypeColorModel} from "../../models/pokemon-type-color-model";
 
 @Component({
   selector: 'app-pokedex',
@@ -12,6 +13,9 @@ export class PokedexComponent {
 
   pokemon!: PokemonModel;
   showImage: boolean = true;
+  pokemonData: PokemonTypeColorModel[] = [];
+
+  color: string = 'default-color';
 
   constructor(
     private readonly _pokemonServ: PokemonService,
@@ -46,6 +50,24 @@ export class PokedexComponent {
   changeImage(isTopCorss: boolean) {
     this.showImage = isTopCorss;
   }
+
+  loadPokemonData(): void {
+    this._pokemonServ.getAllPokemonColor(this.color)
+      .subscribe((data: PokemonTypeColorModel[]) => {
+        this.pokemonData = data;
+        console.log(data);
+        this._router.navigate(['pokemon/color/'+ this.color])
+      });
+  }
+
+  updateColor(newColor: string): void {
+    console.log('Color updated to:', newColor);
+    this.color = newColor;
+    this.loadPokemonData();
+
+  }
+
+
 
 
 
@@ -94,5 +116,6 @@ export class PokedexComponent {
   //   this._router.navigate(['pokemon/'+pokemonId])
   //
   // }
+
 
 }

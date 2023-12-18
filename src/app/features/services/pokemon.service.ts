@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {catchError, forkJoin, map, mergeMap, Observable, of, tap} from "rxjs";
 import {PokemonModel} from "../models/pokemon-model";
 import {PokemonTypeColorModel} from "../models/pokemon-type-color-model";
 
@@ -18,19 +18,31 @@ export class PokemonService {
     return this._http.get<PokemonModel>(`https://pokeapi.co/api/v2/pokemon/${id}`)
   }
 
-  getAllBlue(): Observable<PokemonTypeColorModel> {
-    return this._http.get<PokemonTypeColorModel>(`https://pokeapi.co/api/v2/pokemon-color/blue`);
+  getAllBluePokemon(): Observable<PokemonTypeColorModel[]> {
+    return this._http.get<{ pokemon_species: { name: string; url: string }[] }>('https://pokeapi.co/api/v2/pokemon-color/blue')
+      .pipe(
+        mergeMap(response => {
+          const pokemonSpeciesUrls = response.pokemon_species.map(species => species.url);
+          const pokemonRequests = pokemonSpeciesUrls.map(url => this.getPokemonData(url));
+          return forkJoin(pokemonRequests);
+        })
+      );
   }
 
-  getAllRed(): Observable<PokemonTypeColorModel> {
-    return this._http.get<PokemonTypeColorModel>(`https://pokeapi.co/api/v2/pokemon-color/red`);
+  getAllPokemonColor(color: string): Observable<PokemonTypeColorModel[]> {
+    return this._http.get<{ pokemon_species: { name: string; url: string }[] }>(`https://pokeapi.co/api/v2/pokemon-color/${color}`)
+      .pipe(
+        mergeMap(response => {
+          const pokemonSpeciesUrls = response.pokemon_species.map(species => species.url);
+          const pokemonRequests = pokemonSpeciesUrls.map(url => this.getPokemonData(url));
+          return forkJoin(pokemonRequests);
+        })
+      );
   }
 
-  getAllYellow(): Observable<PokemonTypeColorModel> {
-    return this._http.get<PokemonTypeColorModel>(`https://pokeapi.co/api/v2/pokemon-color/yellow`);
+  private getPokemonData(url: string): Observable<PokemonTypeColorModel> {
+    const pokemonUrl = url.replace('/pokemon-species/', '/pokemon/');
+    return this._http.get<PokemonTypeColorModel>(pokemonUrl);
   }
 
-  getAllGreen(): Observable<PokemonTypeColorModel> {
-    return this._http.get<PokemonTypeColorModel>(`https://pokeapi.co/api/v2/pokemon-color/green`);
-  }
 }

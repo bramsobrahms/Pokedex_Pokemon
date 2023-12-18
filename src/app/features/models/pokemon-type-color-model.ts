@@ -1,37 +1,30 @@
 export interface PokemonTypeColorModel {
-  // pokemon_species: {
-  //   0: {
-  //     name: string;
-  //   }
-  //
-  //   url: {
-  //     varieties: {
-  //       0: {
-  //         pokemon: {
-  //           url: {
-  //             height: number;
-  //             weight: number;
-  //             sprites: {
-  //               front_default: string;
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-
-  pokemon_species: {
+  id: number;
+  name: string;
+  color: {
     name: string;
-    url: string;
-  }[];
-  varieties: {
-    pokemon: {
-      url: string;
-    }
-  }[];
-
-
-
+  };
+  base_happiness: number;
+  capture_rate: number;
+  height?: number;
+  weight?: number;
+  sprites?: {
+    front_default: string;
+    back_default: string;
+  };
+  pokemon_species: PokemonSpecies[];
 }
 
+export interface PokemonSpecies {
+  name: string;
+  url: string;
+  varieties: PokemonVariety[];
+}
+
+export interface PokemonVariety {
+  is_default: boolean;
+  pokemon: {
+    name: string;
+    url: string;
+  };
+}
