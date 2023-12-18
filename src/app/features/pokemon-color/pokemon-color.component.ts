@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {PokemonTypeColorModel} from "../models/pokemon-type-color-model";
+import {PokemonColorModel} from "../models/pokemon-color-model";
 import {PokemonService} from "../services/pokemon.service";
 import {ActivatedRoute} from "@angular/router";
 
@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PokemonColorComponent implements OnInit{
 
-  pokemonData: PokemonTypeColorModel[] = [];
+  pokemonData: PokemonColorModel[] = [];
   color: string;
 
   constructor(
@@ -30,7 +30,7 @@ export class PokemonColorComponent implements OnInit{
 
   loadPokemonData(): void {
     this._pokemonServ.getAllPokemonColor(this.color)
-      .subscribe((data: PokemonTypeColorModel[]) => {
+      .subscribe((data: PokemonColorModel[]) => {
         this.pokemonData = data;
         console.log(data);
       });

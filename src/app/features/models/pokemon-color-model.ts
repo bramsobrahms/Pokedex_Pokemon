@@ -1,4 +1,4 @@
-export interface PokemonTypeColorModel {
+export interface PokemonColorModel {
 
   id: number;
   name: string;
