@@ -1,12 +1,14 @@
 <div>
-  <h3>
-    <a routerLink="pokedex/1">Pokédex</a>
-  </h3>
+  <ul>
+    <li *ngFor="let link of links">
+      <a [routerLink]="link.url"> {{link.title}} </a>
+    </li>
+  </ul>
 
   <div class="search-container">
     <form action="/action_page.php">
       <input type="text" placeholder="Search.." name="search">
-      <button type="submit">&#x1F50D;</button>
+      <button type="submit"> Search </button>
     </form>
   </div>
 </div>

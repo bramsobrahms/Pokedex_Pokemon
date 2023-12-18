@@ -1,16 +1,21 @@
 div {
-  h3 a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin: 15px;
+  }
+
+  a {
     color: #e8e8e7;
     text-decoration: none;
   }
 
-
-
-}
-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .search-container {

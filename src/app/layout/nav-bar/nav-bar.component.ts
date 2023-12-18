@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Link} from "../../models/link";
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
+
+  links: Link[] = [
+    { title: 'Pokedex', url: '/pokedex/1' },
+  ]
 
 }
