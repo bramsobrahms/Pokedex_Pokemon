@@ -10,7 +10,7 @@ export class NavBarComponent {
 
   links: Link[] = [
     { title: 'Pokedex', url: '/pokedex/1' },
-    { title: 'Type', url: '/pokemon/type/'}
+    { title: 'Type', url: '/pokemon/type'}
   ]
 
 }

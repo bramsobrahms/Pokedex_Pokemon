@@ -11,6 +11,7 @@ import { HomeComponent } from './core/components/home/home.component';
 import { PokedexComponent } from './features/pokedex/pokedex/pokedex.component';
 import { PokemonColorComponent } from './features/pokemon-color/pokemon-color.component';
 import { PokemonTypeComponent } from './features/pokemon-type/pokemon-type.component';
+import { PokemonListTypePokemonComponent } from './features/pokemon-list-type-pokemon/pokemon-list-type-pokemon.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { PokemonTypeComponent } from './features/pokemon-type/pokemon-type.compo
     PokedexComponent,
     PokemonColorComponent,
     PokemonTypeComponent,
+    PokemonListTypePokemonComponent,
   ],
   imports: [
     BrowserModule,
