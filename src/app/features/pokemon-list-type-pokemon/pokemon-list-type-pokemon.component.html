@@ -1,13 +1,17 @@
-<div *ngIf="pokemonTypes.length > 0; else noData">
-  <h1>Liste des Pokémon de type {{ type }}</h1>
-  <ul>
-    <li *ngFor="let pokemon of pokemonTypes">
-      {{ pokemon.name }} -
-    </li>
+<h1>Liste des Pokémon de type {{ type }} </h1>
 
-  </ul>
+<div class="card-container">
+
+  <div *ngFor="let pokemon of pokemonTypes" class="card">
+
+    <img src="{{pokemon.sprites.front_default}}" alt="{{pokemon.name}}">
+    <div class="container">
+      <h4><b>{{ pokemon.name }}</b></h4>
+      <p>{{ pokemon.height }} cm</p>
+      <p>{{ pokemon.weight }} kg</p>
+    </div>
+
+  </div>
+
 </div>
 
-<ng-template #noData>
-  <p>Aucune donnée disponible pour le type {{ type }}</p>
-</ng-template>

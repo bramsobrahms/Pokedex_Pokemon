@@ -16,7 +16,7 @@ h1{
 
 .fighting, .flying, .poison, .ground, .rock, .bug,
 .ghost, .steel, .fire, .water, .grass, .electric,
-.psychic, .ice, .dragon, .dark, .fairy, .shadow{
+.psychic, .ice, .dragon, .dark, .fairy, .normal{
   height: 95px;
   text-align: center;
   display: flex;
@@ -92,6 +92,6 @@ h1{
   background-color: #EE99AC;
 }
 
-.shadow{
-  background-color: #696969;
+.normal{
+  background-color: #A8A77A;
 }

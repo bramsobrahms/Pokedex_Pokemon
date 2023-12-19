@@ -3,7 +3,6 @@ import { HttpClient} from "@angular/common/http";
 import {catchError, forkJoin, mergeMap, Observable, of} from "rxjs";
 import { PokemonModel } from "../models/pokemon-model";
 import { PokemonColorModel } from "../models/pokemon-color-model";
-import {PokemonTypeComponent} from "../pokemon-type/pokemon-type.component";
 import {PokemonType} from "../models/pokemon-type";
 
 
@@ -36,18 +35,18 @@ export class PokemonService {
     return this._http.get<PokemonColorModel>(pokemonUrl);
   }
 
-  getAllPokemonType(type: string): Observable<PokemonType[]> {
+  getAllPokemonType(type: string): Observable<any[]> {
     return this._http.get(`https://pokeapi.co/api/v2/type/${type}`).pipe(
       mergeMap((response: any) => {
-        const pokemonSpeciesUrls = response.pokemon?.map((pokemon: any) => pokemon.pokemon.url) || [];
+        const pokemonSpecies = response.pokemon || [];
 
-        if (pokemonSpeciesUrls.length === 0) {
+        if (pokemonSpecies.length === 0) {
           return forkJoin([] as any[]);
         }
 
-        const pokemonRequests = pokemonSpeciesUrls.map((url: string) => this.getPokemonType(url));
+        const pokemonRequests = pokemonSpecies.map((pokemon: any) => this.getPokemonType(pokemon.pokemon.url));
 
-        return forkJoin(pokemonRequests) as Observable<PokemonType[]>;
+        return forkJoin(pokemonRequests) as Observable<any[]>;
       }),
       catchError(error => {
         console.error('Error:', error);
@@ -57,8 +56,8 @@ export class PokemonService {
   }
 
 
-  private getPokemonType(url: string): Observable<PokemonType[]> {
-    return this._http.get<PokemonType[]>(url);
+  private getPokemonType(url: string): Observable<any> {
+    return this._http.get(url);
   }
 
 }

@@ -1,0 +1,33 @@
+h1{
+  margin-bottom: 25px;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 20%; /* Ajustez la largeur en fonction de vos besoins */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), /* Ombre initiale */
+  0 0 10px rgba(139, 0, 0, 1), /* Haut coté gauche rouge */
+  10px 0 10px rgba(232, 232, 231, 0.7), /* Haut coté droit blanc (opacité augmentée) */
+  0 10px 10px rgba(232, 232, 231, 0.7), /* Bas coté gauche blanc (opacité augmentée) */
+  10px 10px 10px rgba(8, 64, 53, 1.5); /* Bas coté droit vert */
+
+  transition: 0.3s;
+  width: 20%;
+  margin-bottom: 20px;
+}
+
+img{
+  width: 150px;
+}
+.container {
+  padding: 2px 16px;
+}
