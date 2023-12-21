@@ -55,7 +55,6 @@ export class PokemonService {
     );
   }
 
-
   private getPokemonType(url: string): Observable<any> {
     return this._http.get(url);
   }

@@ -29,8 +29,12 @@ export class PokemonListTypePokemonComponent implements OnInit{
 
   loadPokemonData(): void {
     this._pokemonServ.getAllPokemonType(this.type).subscribe(data => {
-      this.pokemonTypes = data;
-      console.log(data);
+      this.pokemonTypes = data.map(pokemon => ({
+        ...pokemon,
+        weight: pokemon.weight / 10,
+        height: pokemon.height *10,
+      }));
+      console.log(this.pokemonTypes);
     });
   }
 
