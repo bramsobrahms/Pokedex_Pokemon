@@ -34,7 +34,7 @@ export class PokemonListTypePokemonComponent implements OnInit{
         weight: pokemon.weight / 10,
         height: pokemon.height *10,
       }));
-      console.log(this.pokemonTypes);
+      //console.log(this.pokemonTypes);
     });
   }
 
